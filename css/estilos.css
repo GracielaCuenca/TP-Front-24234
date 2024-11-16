@@ -1,0 +1,378 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+ }
+
+body{
+    background-color: #fceff5;
+    color: rgb(68, 66, 66);
+    font-family: "Poppins", sans-serif; 
+    max-width: 1400px;   
+    margin: auto;
+}
+
+/*----header----*/
+
+header{    
+    background-color: #bf6795;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    max-height: 12vh;
+}
+
+.logo img{
+    width: 110px;
+    border-radius: 60%;
+    margin-top: 70px;
+    margin-left: 10px;
+}    
+
+nav{
+    width: 30%;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 2px
+}
+
+.navitems a:hover, .compras a:hover{
+    padding: 5px;
+    border-radius: 9px;
+    outline: 3px double #f3e8ed
+    }
+
+.navitems, .compras {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.navitems li a {
+    display: block;
+    width: 150px;
+    text-align: center;
+}
+.compras{
+    width: 10%;
+    font-size: 1.2em;
+}
+
+/*------------main-index -----------*/
+main{
+    margin: auto;
+}
+
+.presentacion{
+    display: flex;  
+}
+
+.presentacion h1, .presentacion p{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #bf6795;
+    width: 100%;
+    padding: 5%;
+    line-height: 1.6em;
+    text-align: center;
+    align-self: center
+}
+
+.presentacion img{
+    width: 63%;
+}
+
+/*------------favoritos--------------*/
+
+.favoritos{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulofavoritos, .tituloresena{
+    width: 100%;
+    background:#bf6795 ;
+    color: #f3e8ed ;
+    letter-spacing: 2px;
+    padding: 1.5%;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+.cardcontainer{
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card{
+    width: 300px;
+    height: 90%;
+    text-align: center;
+    margin-top: 10px;
+}
+ 
+.card img{
+    width: 300px;
+    height: 400px;
+}
+
+.card p, .card h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.card h3{
+    color:#bf6795;
+    font-weight: bold;
+}
+
+.botonagregar {
+    width: 300px;
+    background-color: #33222b;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+/*-----------reseñas------*/
+
+.gridcontainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+ .resena{
+    width: 96%; 
+    height: 100%; 
+    padding: 10px;
+    text-align: center;
+    border: #bf6794af solid 1px;
+    border-radius: 15px;
+    box-shadow: 2px 2px #bf6794af ;
+    margin:  auto;
+ }
+
+ .resena h4{
+    color: #33222b;
+    font-weight: bolder;
+    font-size: 1.1em;
+ }
+
+/*------------main-productos -----------*/
+.seccionesproductos{
+    width: 100vw;
+    height: 8vh;
+    background-color: #f3e8ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.seccionesproductos li a{
+    width: 150px;
+    color: #bf6795;
+    display: block;
+    text-align: center;
+}
+
+.navitemcategoria{
+    width: 30%;
+    font-weight: bold;
+    letter-spacing: 2px
+}
+
+.navitemcategoria a:hover{
+    padding: 2px;
+    border-radius: 9px;
+    outline: 3px double #bf6795
+}
+
+.navitemcategoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.containercategoria{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}  
+
+.containercategoria .card{
+    margin: 0%;
+}
+
+/*------------main-contacto -----------*/
+
+.containercontacto{
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    letter-spacing: 0.5px;
+}
+
+.contacto, .ubicacion{
+    width: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px 2px #eea9cdd0;   
+}
+
+.ubicacion i {
+    color: #bf6795;
+    margin-right: 3px;
+}
+
+.ubicacion a {
+    color: rgb(68, 66, 66);
+}
+
+.mapa iframe{
+    width: 100%;
+    align-items: center;
+    margin: 20px 0px;
+}   
+
+form{
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+label, input, textarea{
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+input, textarea{
+    border: 1px solid #bf6795;
+}
+
+textarea{
+    height: 100px;
+}
+
+.botonenviar, .botonborrar{
+    width: 120px;
+    padding: 16px 20px; 
+    display: inline-block; 
+    margin-left: 7%
+}
+
+.botonenviar input{
+    color: #f3e8ed;
+    background: #33222b;
+    font-weight: bold;
+}
+
+.botonborrar input{
+    color: #33222b;
+    background: #f3e8ed;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*---------footer------------*/
+footer{
+    background-color: #33222b;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 15px ;
+}
+
+footer i {
+   padding: 1%;
+}
+
+.footercontainer{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footercontainer p,  i, a{
+   color: #f3e8ed;
+}
+
+footer .redes{
+    font-size: 2em;
+    width: 10%;
+    padding-bottom: 0.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer .derechos{
+    background-color: #f3e8ed;
+    padding: 0.5% ;
+    color: rgb(68, 66, 66);
+}
+/*----------mediaQueries------*/
+
+
+@media (max-width: 600px) {
+    header {
+        width: 100vw;
+        height: 15vh;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header .logo{
+        width: 8px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    main.containercontacto , .footercontainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: auto;
+        padding-top: 20px;
+    }
+
+    main .ubicacion iframe {
+        width: 100%;
+        height: 200px;
+    }
+
+    
+}
+
+
