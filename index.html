@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mali Ta Indumentaria</title>
 
+    <!-- conectar bootstrap antes de mi css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+
     <!-- conectar css-->
     <link rel="stylesheet" href="css/estilos.css">
 
@@ -29,31 +34,66 @@
 </head>
 <body>
 
+    
+    <!-- Bootstrap -->
     <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/img/logo.png" alt="Logo Mali Ta Indumentaria">
-            </a>
-        </div>
-        <nav >
-            <ul class="navitems">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pages/productos.html">Productos</a></li>
-                <li><a href="pages/contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="compras">
-            <a href="#"><i class="fa-solid fa-user"></i></a>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+
+        <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../assets/img/logo.png" alt="Logo Malita Indumentaria" width="70" height="70" class="d-inline-block align-text-top">
+                    
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/productos.html">Productos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                  </li>
+                  
+              </div>
+            </div>
+          </nav>
     </header>
 
-    
+
+<!-- Bootstrap -->
+
 
     <main>
         <section class="presentacion">
             <h1>Mali Ta Pijamas <br> Para estar comodos y lindos, en casa y a la hora de dormir. </h1>
-            <img src="assets/img/pijamasunisex.jpg" alt="pijamas para todos" width="40%">
+            <img src="assets/img/fiestapijamas.jpg" alt="pijamas para todos" width="40%">
+
+            <!-- aca voy a saludar y pedir el nombre -->
+            <div id="ventana-modal">
+                <div id="modal">
+                    <h2>¡Bienvenido/a a tienda MaliTa!</h2>
+                    <p>¿Cuál es tu nombre?</p>
+                    <input type="text" id="nombreUsuarioInput" placeholder="Ingresa tu nombre" />
+                    <br><br>
+                    <button onclick="guardarNombre()">Aceptar</button>
+                </div>
+              </div>
+              
+              <div id="mensajeBienvenida" >
+                <p>¡Bienvenido/a,<br> <span id="mostrarNombreUsuario"></span>!</p>
+              </div>
+            <!-- aca voy a poner el nombre -->
         </section>
         
         <section class="favoritos">
@@ -62,23 +102,23 @@
             <div class="cardcontainer">
 
                 <div class="card">
-                    <a href="#"><img src="assets/img/pijamanina.jpg" alt="pijama" ></a>
-                    <p>Pijama niña con flores</p>
-                    <h3>$ 34.500</h3>
+                    <a href="#"><img src="assets/img/pnanimalitos19.jpg" alt="pijama" ></a>
+                    <p>Pijama animalitos</p>
+                    <h3>$ 55.700</h3>
                     <a href="#" class="botonagregar">Agregar al carrito</a>
                 </div>
 
                 <div class="card">
-                    <a href="#"><img src="assets/img/pijamanina.jpg" alt="pijama" ></a>
-                    <p>Pijama niña con flores</p>
-                    <h3>$ 34.500</h3>
+                    <a href="#"><img src="assets/img/pmverde6.jpg" alt="pijama" ></a>
+                    <p>Pijama Virginia</p>
+                    <h3>$ 70.9800</h3>
                     <a href="#" class="botonagregar">Agregar al carrito</a>
                 </div>
 
                 <div class="card">
-                    <a href="#"><img src="assets/img/pijamanina.jpg" alt="pijama" ></a>
-                    <p>Pijama niña con flores</p>
-                    <h3>$ 34.500</h3>
+                    <a href="#"><img src="assets/img/phgrisalgodon13.jpg" alt="pijama" ></a>
+                    <p>Pijama Luciano</p>
+                    <h3>$ 55.100</h3>
                     <a href="#" class="botonagregar">Agregar al carrito</a>
                 </div>
 
@@ -94,17 +134,21 @@
             <div class="gridcontainer">
 
                 <div class="resena">
+                    <img id="foto-usuario1" src="" alt="Foto de usuario1"> <!-- agregue esto para consumir api con foto de usuarios aleatorias--> 
+                    
                     <h4>Lara Suarez - Córdoba</h4>
                     <p>La calidad de los pijamas es excelente, sin dudas volveré a comprar</p>
                 </div>
 
                 <div class="resena">
+                    <img id="foto-usuario2" src="" alt="Foto de usuario2"><!-- agregue esto para consumir api --> 
                     <h4>Nadia Lopez - CABA</h4>
-                    <p>Los pijamas son muy lindos y la tela de un algodón muy suave, a mis hijos les encantaron los que les compré</p>
+                    <p>Los pijamas son muy lindos y la tela de un algodón muy suave, a mis hijos les encantaron</p>
                 </div>
 
                 <div class="resena">
-                    <h4>Carlos Arevalo - Mar del Plata</h4>
+                    <img id="foto-usuario3" src="" alt="Foto de usuario3"><!-- agregue esto para consumir api --> 
+                    <h4>Carla Arevalo - Mar del Plata</h4>
                     <p>Regalé unos de sus pijamas y quien recibio el regalo esta muy contento, me hicieron quedar muy bien.  Gracias!</p>
                 </div>
 
@@ -136,5 +180,11 @@
     
     </footer>
     
+     <!-- enlazo bootstrap antes que mi js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+   
+    <script src="/js/scripts.js"></script>
+
 </body>
 </html>

@@ -11,56 +11,58 @@ body{
     color: rgb(68, 66, 66);
     font-family: "Poppins", sans-serif; 
     max-width: 1400px;   
-    margin: auto;
+    margin: auto
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: #bf6795;
 }
 
 /*----header----*/
 
 header{    
     background-color: #bf6795;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1%;
-    max-height: 12vh;
+    width: 100%;
 }
 
-.logo img{
-    width: 110px;
-    border-radius: 60%;
-    margin-top: 70px;
-    margin-left: 10px;
-}    
+.d-inline-block {
+    border-radius: 60%;  
+}  
 
-nav{
-    width: 30%;
+.nav-link{
     font-size: 1.2em;
     font-weight: bold;
-    letter-spacing: 2px
+    letter-spacing: 2px;
+    gap: 30px;
+    color: #fceff5 !important
 }
 
-.navitems a:hover, .compras a:hover{
-    padding: 5px;
+.nav-link i{
+    color: #fceff5 
+
+}
+.navbar-toggler{
+    color: #fceff5!important
+}
+
+.nav-link a:hover{
+    padding: 2px;
     border-radius: 9px;
     outline: 3px double #f3e8ed
-    }
-
-.navitems, .compras {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 20px;
 }
 
-.navitems li a {
-    display: block;
-    width: 150px;
+.nav-link li a {
+    width: 140px;
     text-align: center;
+    border: orangered solid ;
 }
-.compras{
-    width: 10%;
-    font-size: 1.2em;
-}
+
+
+
 
 /*------------main-index -----------*/
 main{
@@ -69,6 +71,7 @@ main{
 
 .presentacion{
     display: flex;  
+    width: 100%;
 }
 
 .presentacion h1, .presentacion p{
@@ -79,36 +82,105 @@ main{
     padding: 5%;
     line-height: 1.6em;
     text-align: center;
-    align-self: center
+    align-self: center;
 }
 
 .presentacion img{
-    width: 63%;
+   width: 60%;
+  
 }
+
+
+/*-------------*/
+
+#ventana-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Estilos del modal */
+#modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de aceptar */
+#modal button {
+    background-color: #bf6795;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modal button:hover {
+    background-color: #bf6795;
+}
+
+#mensajeBienvenida {
+   
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    width: 130px;
+    height: 60px;
+    padding: 10 px;
+    background-color: #f3e8ed;
+    color: #bf6795;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: #bf6795 solid 3px;
+    z-index: 1000;
+}
+
+
 
 /*------------favoritos--------------*/
 
 .favoritos{ 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
 }
 
 .titulofavoritos, .tituloresena{
     width: 100%;
-    background:#bf6795 ;
-    color: #f3e8ed ;
     letter-spacing: 2px;
     padding: 1.5%;
     text-align: center;
     margin-bottom: 10px;
-
+    color: #f3e8ed;
+    background-color: #bf6795;
+   
 }
 .cardcontainer{
     width: 75%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    padding: 0;
+    margin: 1%;
+    
 }
 
 .card{
@@ -116,11 +188,14 @@ main{
     height: 90%;
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 10px;
+   
 }
  
 .card img{
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    max-width: 300px;
+    max-height: 400px;
 }
 
 .card p, .card h3 {
@@ -139,7 +214,7 @@ main{
     display: inline-block;
     text-align: center;
     padding: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /*-----------reseñas------*/
@@ -148,6 +223,7 @@ main{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px 0px;
 }
 
  .resena{
@@ -166,28 +242,48 @@ main{
     font-weight: bolder;
     font-size: 1.1em;
  }
+/*--para dar estilo a img usurio de api-*/
+ #foto-usuario1, #foto-usuario2,#foto-usuario3 {
+
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    margin: 5px;
+  }
 
 /*------------main-productos -----------*/
+
 .seccionesproductos{
-    width: 100vw;
+    width: 100%;
     height: 8vh;
     background-color: #f3e8ed;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+   
 }
-.seccionesproductos li a{
-    width: 150px;
+
+.navitemcategoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    padding: 0%;
+}
+
+.navitemcategoria li a{
+    width: 100px;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: bold;
     color: #bf6795;
     display: block;
     text-align: center;
-}
-
-.navitemcategoria{
-    width: 30%;
-    font-weight: bold;
-    letter-spacing: 2px
+    text-decoration: none;
+  
 }
 
 .navitemcategoria a:hover{
@@ -196,36 +292,37 @@ main{
     outline: 3px double #bf6795
 }
 
-.navitemcategoria {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 20px;
-}
-
 .containercategoria{
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    
+    justify-content: space-around;
+    align-items: center
 }  
 
 .containercategoria .card{
     margin: 0%;
 }
 
+.botonagregar a:hover{
+    color: #bf6795
+}
+
+.card p {
+    margin-top: 10px;
+}
 /*------------main-contacto -----------*/
 
 .containercontacto{
-    width: 100%;
-    margin-top: 1%;
+    width: 95%;
+   margin-top: auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     letter-spacing: 0.5px;
+    flex-wrap: wrap;
+    
 }
 
 .contacto, .ubicacion{
@@ -235,7 +332,8 @@ main{
     align-items: center;
     margin: 10px;
     padding: 20px;
-    box-shadow: 2px 2px 5px 2px #eea9cdd0;   
+    box-shadow: 2px 2px 5px 2px #eea9cdd0;  
+    
 }
 
 .ubicacion i {
@@ -258,7 +356,7 @@ form{
     padding: 15px;
     border-radius: 10px;
     margin: auto;
-}
+   }
 
 label, input, textarea{
     display: inline-block;
@@ -276,17 +374,26 @@ textarea{
     height: 100px;
 }
 
+.botones{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
 .botonenviar, .botonborrar{
-    width: 120px;
-    padding: 16px 20px; 
-    display: inline-block; 
-    margin-left: 7%
+    width: 130px;
+    padding: 20px; 
+    
 }
 
 .botonenviar input{
     color: #f3e8ed;
     background: #33222b;
     font-weight: bold;
+    text-align: center;
+    padding: 0;
+    
+    
+    
 }
 
 .botonborrar input{
@@ -294,6 +401,12 @@ textarea{
     background: #f3e8ed;
     font-weight: bold;
     text-align: center;
+    padding: 0;
+}
+
+.botonborrar:hover,.botonenviar:hover{
+    transform: scale(1.1);    
+
 }
 
 /*---------footer------------*/
@@ -301,13 +414,13 @@ footer{
     background-color: #33222b;
     text-align: center;
     letter-spacing: 2px;
-    margin-top: 15px ;
+    margin-top: 10px ;
+    
 }
 
 footer i {
    padding: 1%;
 }
-
 .footercontainer{
     padding-top: 1%;
     padding-bottom: 1%;
@@ -319,6 +432,7 @@ footer i {
 
 .footercontainer p,  i, a{
    color: #f3e8ed;
+   
 }
 
 footer .redes{
@@ -328,6 +442,10 @@ footer .redes{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    letter-spacing: 10px;
+    
+    
+
 }
 
 footer .derechos{
@@ -338,26 +456,8 @@ footer .derechos{
 /*----------mediaQueries------*/
 
 
-@media (max-width: 600px) {
-    header {
-        width: 100vw;
-        height: 15vh;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-    }
-
-    header .logo{
-        width: 8px;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
-
-    main.containercontacto , .footercontainer{
+@media (max-width: 575px) {
+    .containercontacto , .footercontainer{
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -367,9 +467,31 @@ footer .derechos{
         padding-top: 20px;
     }
 
-    main .ubicacion iframe {
+    .ubicacion iframe {
         width: 100%;
         height: 200px;
+    }
+/*------------*/
+    .presentacion{
+        display: flex;  
+        width: 100%;
+        flex-wrap: wrap;
+       
+    }
+    
+    .presentacion h1, .presentacion p{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        color: #bf6795;
+        width: 100%;
+        padding: 5%;
+        line-height: 1.6em;
+        text-align: center;
+        align-self: center
+    }
+    
+    .presentacion img{
+        width: 100%;
     }
 
     
